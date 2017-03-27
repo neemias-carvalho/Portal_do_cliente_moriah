@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s0="http://moriahconsultoria.ddns.net:83/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://moriahconsultoria.ddns.net:83/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://moriahconsultoria.ddns.net:83/">
+      <s:element name="AUTLST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CNOMECLIENTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CSENHACLIENTE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AUTLSTRESPONSE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AUTLSTRESULT" type="s0:STINFOS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SETPERFIL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="STINFOSEDITADO" type="s0:STINFOSEDITADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SETPERFILRESPONSE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SETPERFILRESULT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="STINFOS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AINFOUSUARIOLOGADO" type="s0:ARRAYOFSTRING" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="STINFOSEDITADO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CELULAR" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CODCLI" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EMPRESA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FONE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="USUARIO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ARRAYOFSTRING">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="STRING" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="AUTLSTSOAPIN">
+    <part name="parameters" element="s0:AUTLST" />
+  </message>
+  <message name="AUTLSTSOAPOUT">
+    <part name="parameters" element="s0:AUTLSTRESPONSE" />
+  </message>
+  <message name="SETPERFILSOAPIN">
+    <part name="parameters" element="s0:SETPERFIL" />
+  </message>
+  <message name="SETPERFILSOAPOUT">
+    <part name="parameters" element="s0:SETPERFILRESPONSE" />
+  </message>
+  <portType name="WSPOR02SOAP">
+    <operation name="AUTLST">
+      <documentation>Retorna .F. caso o usuários não esteja cadastrados no sistema, e retorna .T. se o usuário estiver cadastrado. Caso esteja, lista informações do usuário em um vetor.</documentation>
+      <input message="s0:AUTLSTSOAPIN" />
+      <output message="s0:AUTLSTSOAPOUT" />
+    </operation>
+    <operation name="SETPERFIL">
+      <documentation>Seta informações do perfil do usuário.</documentation>
+      <input message="s0:SETPERFILSOAPIN" />
+      <output message="s0:SETPERFILSOAPOUT" />
+    </operation>
+  </portType>
+  <binding name="WSPOR02SOAP" type="s0:WSPOR02SOAP">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AUTLST">
+      <soap:operation soapAction="http://moriahconsultoria.ddns.net:83/AUTLST" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SETPERFIL">
+      <soap:operation soapAction="http://moriahconsultoria.ddns.net:83/SETPERFIL" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WSPOR02">
+    <documentation>Webservice do Portal do Cliente Moriah</documentation>
+    <port name="WSPOR02SOAP" binding="s0:WSPOR02SOAP">
+      <soap:address location="http://moriahconsultoria.ddns.net:83/WSPOR02.apw" />
+    </port>
+  </service>
+</definitions>

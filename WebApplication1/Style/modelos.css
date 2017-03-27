@@ -1,0 +1,219 @@
+﻿body {
+    background-image:url('../Imagens/bg2.png');
+    background-repeat:repeat
+}
+
+.posicaoSlide {
+    top: 100px;
+    position: absolute;
+    width: 100%
+}
+
+.tamanhoMaximo {
+    width: 100%;
+}
+
+.posicaoAbsoluto {
+    position: absolute;
+}
+
+.posicaoRelativo {
+    position: relative;
+}
+
+.corFonteTituloFieldset {
+    color: black;
+}
+
+.posicaoLogo {
+    left: 3%;
+    top: 3%;
+    height: 12%;
+}
+
+.posicaoTitulo {
+    left: 42%;
+    top: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    font-size: xx-large;
+}
+
+.posicaoLogin {
+    width: 90%;
+    height: 60%;
+    left: 5%;
+    top: 25%;
+    background-color: white;
+}
+
+legend.scheduler-border {
+    width: auto;
+    padding: 0 10px;
+    border-bottom: none;
+}
+
+.posicaoFieldSet {
+    top: 8%;
+    left: 4%;
+    width: 90%;
+    height: 80%;
+    border: solid;
+    color: #e3e3e3;
+    border-width: 1px;
+}
+
+.posicaoImage2 {
+    left: 37%;
+    top: 15%;
+    width: 60%;
+}
+
+.posicaoCampos {
+    color: gray;
+    left: 3%;
+}
+
+.posicaoText {
+    position: relative;
+    top: 5px;
+    width: 30%;
+    height: 10%;
+    left: 3%;
+}
+
+.posicaoLinkButton {
+    left: 75%;
+    position: relative;
+    top: 30px;
+}
+
+.rodape {
+    top: 118%;
+    margin-bottom: 1%;
+    opacity: 0.3;
+    background-color: blue;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+}
+
+.labelRodape {
+    position: absolute;
+    width: 24%;
+    height: 10%;
+    top: 9%;
+    left: 7.5%;
+    color: #8099B2;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.label2Rodape {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    top: 30%;
+    left: 7.5%;
+    color: #FFFFFF;
+}
+
+.copyright {
+    top: 135%;
+    margin-bottom: 1%;
+    opacity: 0.5;
+    background-color: blue;
+    width: 50%;
+    height: 8%;
+    position: absolute;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.labelCopyright {
+    color: #FFFFFF;
+    margin-top:2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+.bodyLogin {
+    background-color: #e0e0e0;
+    margin: 0;
+    margin-top: 0.5%
+}
+/*
+.dropdown-large {
+  position: static !important;
+}
+.dropdown-menu-large {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 20px 0px;
+}
+.dropdown-menu-large > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.dropdown-menu-large > li > ul > li {
+  list-style: none;
+}
+.dropdown-menu-large > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: normal;
+}
+.dropdown-menu-large > li ul > li > a:hover,
+.dropdown-menu-large > li ul > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+.dropdown-menu-large .disabled > a,
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+  color: #999999;
+}
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.dropdown-menu-large .dropdown-header {
+  color: #428bca;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .dropdown-menu-large {
+    margin-left: 0 ;
+    margin-right: 0 ;
+  }
+  .dropdown-menu-large > li {
+    margin-bottom: 30px;
+  }
+  .dropdown-menu-large > li:last-child {
+    margin-bottom: 0;
+  }
+  .dropdown-menu-large .dropdown-header {
+    padding: 3px 15px !important;
+  }
+}
+*/
+.posicaoRecursos {
+    top:50px;
+    position:absolute;
+    width: 100%;
+}
+
+ul.nav li.dropdown:hover ul.dropdown-menu
+{ 
+    display: block; 
+}
