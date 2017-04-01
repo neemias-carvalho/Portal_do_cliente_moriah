@@ -166,6 +166,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
         
         /// <summary>
+        /// imgPerfilEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPerfilEditar;
+        
+        /// <summary>
         /// FileUploadControl control.
         /// </summary>
         /// <remarks>
@@ -184,13 +193,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label StatusLabel;
         
         /// <summary>
-        /// btnUpload control.
+        /// CheckBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpload;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
         
         /// <summary>
         /// campo6 control.

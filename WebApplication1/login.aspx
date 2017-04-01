@@ -36,9 +36,7 @@
                 <input class="posicaoText" id="Text2" runat="server" type="password" />
                 <br />
                 <br />
-                <asp:CheckBoxList class="posicaoCampos posicaoRelativo" ID="CheckBoxList1" runat="server">
-                    <asp:ListItem>Lembrar-me?</asp:ListItem>
-                </asp:CheckBoxList>
+                <asp:CheckBox ID="CheckBox1" class="posicaoCampos posicaoRelativo" Text="Lembrar-me?" runat="server" />
                 <br />
                 <asp:Button class="btn btn-secondary posicaoCampos posicaoRelativo" ID="Button1" runat="server" Text="Entrar" OnClick="Button1_Click" />
                 <asp:LinkButton class="posicaoLinkButton" ID="LinkButton1" runat="server">Retornar para o site da Moriah</asp:LinkButton>

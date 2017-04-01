@@ -83,6 +83,8 @@ namespace WebApplication1.ServiceReference1 {
         
         private string FONEField;
         
+        private string TITULOIMAGEMField;
+        
         private string USUARIOField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -156,6 +158,19 @@ namespace WebApplication1.ServiceReference1 {
                 if ((object.ReferenceEquals(this.FONEField, value) != true)) {
                     this.FONEField = value;
                     this.RaisePropertyChanged("FONE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+        public string TITULOIMAGEM {
+            get {
+                return this.TITULOIMAGEMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TITULOIMAGEMField, value) != true)) {
+                    this.TITULOIMAGEMField = value;
+                    this.RaisePropertyChanged("TITULOIMAGEM");
                 }
             }
         }

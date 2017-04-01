@@ -19,7 +19,7 @@
 <body>
     <form runat="server">
 
-        <!--Informações do Usuário-->
+        <!--Informações de login do Usuário-->
         <div>
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
@@ -210,7 +210,7 @@
                         <div class="col-xs-12">
                             <div class="col-xs-4 col-md-3">
                                 <a class="thumbnail">
-                                    <img src="Imagens/imgprofile.png" />
+                                    <img id="imgPerfilEditar" runat="server" src="Imagens/imgprofile.png" />
                                 </a>
                                 <div>
                                     <br />
@@ -218,8 +218,7 @@
                                     <br />
                                     <asp:Label runat="server" ID="StatusLabel" Text="" ForeColor="Red" />
                                     <br />
-                                    <asp:Button ID="btnUpload" OnClick="btnUpload_Click" runat="server" Text="Carregar Fotos" BackColor="#CC0000" BorderColor="#CC0000" Font-Bold="True" ForeColor="White" />
-                                    <br />
+                                    <asp:CheckBox ID="CheckBox1" AutoPostBack="true" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Sem foto" runat="server" />
                                     <br />
                                 </div>
                             </div>
@@ -229,7 +228,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="campo7">Empresa</label>
-                                <input type="text" class="form-control" id="campo7" runat="server" />
+                                <input type="text" class="form-control" disabled="disabled" id="campo7" runat="server" />
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="campo8">Email</label>

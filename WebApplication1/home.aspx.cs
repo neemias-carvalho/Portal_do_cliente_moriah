@@ -11,8 +11,24 @@ namespace WebApplication1
 {
     public partial class home : System.Web.UI.Page
     {
+        //Objetos públicos
+        ServiceReference1.WSPOR02SOAPClient ws = new ServiceReference1.WSPOR02SOAPClient();
+        ServiceReference1.STINFOSEDITADO infosEditado = new ServiceReference1.STINFOSEDITADO();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Classes.PingHost.PingHostMethod("moriahconsultoria.ddns.net:83/WSPOR02.apw?WSDL");
+
+            if (Session["10"].ToString() != "")
+            {
+                imgPerfil.Src = "/Uploads/fotos/" + Session["10"].ToString();
+                imgPerfilEditar.Src = "/Uploads/fotos/" + Session["10"].ToString();
+            } else
+            {
+                imgPerfil.Src = "Imagens/imgprofile.png";
+                imgPerfilEditar.Src = "Imagens/imgprofile.png";
+            }
+            
             if (Request.UrlReferrer == null)
             {
                 Response.Redirect("/login.aspx");
@@ -44,6 +60,7 @@ namespace WebApplication1
             campo3.Value = Session["3"].ToString();
             campo4.Value = Session["5"].ToString();
             campo5.Value = Session["7"].ToString();
+            Page_Load(sender, e);
             caixaDoPerfilParaEdicao.Visible = false;
         }
 
@@ -56,6 +73,7 @@ namespace WebApplication1
             campo8.Value = Session["3"].ToString();
             campo9.Value = Session["5"].ToString();
             campo10.Value = Session["7"].ToString();
+            Page_Load(sender, e);
             caixaDoPerfil.Visible = false;
         }
 
@@ -69,24 +87,28 @@ namespace WebApplication1
         //Atualiza informações do usuário
         protected void Button3_Click(object sender, EventArgs e)
         {
-            ServiceReference1.WSPOR02SOAPClient ws = new ServiceReference1.WSPOR02SOAPClient();
-            ServiceReference1.STINFOSEDITADO infosEditado = new ServiceReference1.STINFOSEDITADO();
+            //Carregamento da imagem
+            carregarImagem();
 
+            //Atualização do webservice com as novas informações coletas a partir dos campos
             infosEditado.CODCLI = Session["9"].ToString();
             infosEditado.USUARIO = Session["2"].ToString();
             infosEditado.EMPRESA = campo7.Value;
             infosEditado.EMAIL = campo8.Value;
             infosEditado.FONE = campo9.Value;
             infosEditado.CELULAR = campo10.Value;
-
+            infosEditado.TITULOIMAGEM = Session["10"].ToString();
             ws.SETPERFIL(infosEditado);
 
+            //Atualização do session com as novas informações coletas a partir dos campos
             Session["8"] = campo6.Value;
             Session["1"] = campo7.Value;
             Session["3"] = campo8.Value;
             Session["5"] = campo9.Value;
             Session["7"] = campo10.Value;
 
+            //Atualizando o painel com as novas informações
+            LinkButton3_Click(sender, e);
 
             Response.Write("<div id=\"divAlertBootstrap\" style=\"width:100%; position:fixed; top:0px; z-index:3000; margin: 0px; text-align:center; font-weight:bold; display: none;\" class=\"alert alert-success\">" +
                     "Informações atualizadas!</div>" +
@@ -113,8 +135,8 @@ namespace WebApplication1
             }
         }
 
-        //Carregamento de imagens
-        protected void btnUpload_Click(object sender, EventArgs e)
+        //Carregamento da imagem
+        protected void carregarImagem()
         {
             if (FileUploadControl.PostedFile.ContentLength < 8388608)
             {
@@ -149,7 +171,7 @@ namespace WebApplication1
                                             hpf.SaveAs(Server.MapPath("~/uploads/fotos/") + filename + i + extensao);
 
                                             //Prefixo p/ img pequena
-                                            var prefixoP = "-p";
+                                            //var prefixoP = "-p";
                                             //Prefixo p/ img grande
                                             var prefixoG = "-g";
 
@@ -157,8 +179,11 @@ namespace WebApplication1
                                             string pth = Server.MapPath("~/uploads/fotos/") + filename + i + extensao;
 
                                             //Redefine altura e largura da imagem e Salva o arquivo + prefixo
-                                            Redefinir.resizeImageAndSave(pth, 70, 53, prefixoP);
-                                            Redefinir.resizeImageAndSave(pth, 500, 331, prefixoG);
+                                            //Redefinir.resizeImageAndSave(pth, 70, 53, prefixoP);
+                                            Redefinir.resizeImageAndSave(pth, 172, 180, prefixoG);
+
+                                            infosEditado.TITULOIMAGEM = filename + i.ToString() + extensao;
+                                            Session["10"] = infosEditado.TITULOIMAGEM;
                                         }
 
                                     }
@@ -168,7 +193,7 @@ namespace WebApplication1
                                     ex.ToString();
                                 }
                                 // Mensagem se tudo ocorreu bem
-                                StatusLabel.Text = "Todas imagens carregadas com sucesso!";
+                                StatusLabel.Text = "Imagem carregada com sucesso!";
 
                             }
                             else
@@ -211,6 +236,27 @@ namespace WebApplication1
             {
                 erro.ToString();
                 throw;
+            }
+        }
+
+        //Sem foto de perfil
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox1.Checked)
+            {
+                infosEditado.CODCLI = Session["9"].ToString();
+                infosEditado.USUARIO = Session["2"].ToString();
+                infosEditado.EMPRESA = campo7.Value;
+                infosEditado.EMAIL = campo8.Value;
+                infosEditado.FONE = campo9.Value;
+                infosEditado.CELULAR = campo10.Value;
+                infosEditado.TITULOIMAGEM = "";
+
+                CheckBox1.Checked = false;
+                Session["10"] = "";
+                ws.SETPERFIL(infosEditado);
+                Page_Load(sender, e);
+                LinkButton3_Click(sender, e);
             }
         }
     }

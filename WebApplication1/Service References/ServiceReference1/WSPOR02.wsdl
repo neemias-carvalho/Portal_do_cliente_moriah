@@ -43,6 +43,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="EMAIL" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="EMPRESA" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="FONE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TITULOIMAGEM" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="USUARIO" type="s:string" />
         </s:sequence>
       </s:complexType>

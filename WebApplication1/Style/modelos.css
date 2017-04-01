@@ -1,12 +1,12 @@
 ﻿body {
-    background-image:url('../Imagens/bg2.png');
-    background-repeat:repeat
+    background-image: url('../Imagens/bg2.png');
+    background-repeat: repeat;
 }
 
 .posicaoSlide {
     top: 100px;
     position: absolute;
-    width: 100%
+    width: 100%;
 }
 
 .tamanhoMaximo {
@@ -132,7 +132,7 @@ legend.scheduler-border {
 
 .labelCopyright {
     color: #FFFFFF;
-    margin-top:2%;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     display: table;
@@ -141,7 +141,7 @@ legend.scheduler-border {
 .bodyLogin {
     background-color: #e0e0e0;
     margin: 0;
-    margin-top: 0.5%
+    margin-top: 0.5%;
 }
 /*
 .dropdown-large {
@@ -208,12 +208,11 @@ legend.scheduler-border {
 }
 */
 .posicaoRecursos {
-    top:50px;
-    position:absolute;
+    top: 50px;
+    position: absolute;
     width: 100%;
 }
 
-ul.nav li.dropdown:hover ul.dropdown-menu
-{ 
-    display: block; 
+ul.nav li.dropdown:hover ul.dropdown-menu {
+    display: block;
 }
