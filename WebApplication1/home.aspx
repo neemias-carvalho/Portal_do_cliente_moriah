@@ -14,6 +14,7 @@
     <link type="text/css" rel="stylesheet" href="Style/modelos.css" />
     <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.maskedinput.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -85,7 +86,7 @@
                         <img src="Imagens/img3.jpg" alt="Flower" />
                         <div class="carousel-caption">
                             <h1>O Portal</h1>
-                            <p>Desenvolvido para proporciona a todos os usuários os recursos que a nossa empresa oferece.</p>
+                            <p>Desenvolvido para proporcionar a todos os usuários os recursos que a nossa empresa oferece.</p>
                         </div>
                     </div>
 
@@ -107,6 +108,16 @@
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
+            </div>
+            <div id="sobreOSlide" class="modeloSobreOSlide">
+            </div>
+            <div id="infoTel" class="modeloInfoTel">
+                <span class="glyphicon glyphicon-earphone modeloTelefoneSimbolo"></span>
+                <span class="modeloTelefoneEEmail">(083) 3247-2746</span>
+            </div>
+            <div id="infoEmail" class="modeloInfoEmail">
+                <span class="glyphicon glyphicon-envelope modeloTelefoneSimbolo"></span>
+                <span class="modeloTelefoneEEmail"><a href="mailto:contato@moriahconsultoria.com.br?subject=Contato, Cliente Moriah!">contato@moriahconsultoria.com.br</a></span>
             </div>
         </div>
 
@@ -271,4 +282,14 @@
     function alertBootstrap() {
         $("#divAlertBootstrap").slideDown(500).delay(4000).slideUp(500);
     };
+</script>
+
+<!--Máscara dos campos-->
+<script>
+    jQuery(function ($) {
+        $("#campo4").mask("9999-9999");
+        $("#campo5").mask("9999-9999");
+        $("#campo9").mask("9999-9999");
+        $("#campo10").mask("9999-9999");
+    });
 </script>

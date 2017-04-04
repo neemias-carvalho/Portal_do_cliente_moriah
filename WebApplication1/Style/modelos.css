@@ -4,7 +4,7 @@
 }
 
 .posicaoSlide {
-    top: 100px;
+    top: 50px;
     position: absolute;
     width: 100%;
 }
@@ -215,4 +215,65 @@ legend.scheduler-border {
 
 ul.nav li.dropdown:hover ul.dropdown-menu {
     display: block;
+}
+
+.modeloDivStatusServer {
+    position: initial;
+    margin-top: 10%;
+    margin-left:auto;
+    margin-right:auto;
+    display:table;
+    right: 1px;
+}
+
+.modeloStatusServer {
+    width: 20px;
+    position: relative;
+}
+
+.modeloSobreOSlide {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: darkblue;
+}
+
+.modeloInfoTel {
+    position: absolute;
+    top: 97%;
+    left: 10%;
+    width: 20%;
+    height: 60px;
+    background-color: blue;
+}
+
+.modeloInfoEmail {
+    position: absolute;
+    top: 97%;
+    left: 70%;
+    width: 20%;
+    height: 60px;
+    background-color: blue;
+}
+
+.modeloTelefoneEEmail {
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    font-family: Lucida Sans Unicode;
+    color: white;
+}
+
+.modeloTelefoneSimbolo {
+    position: initial;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    display: table;
+    color: white;
+}
+
+.modeloLabelStatusServer {
+    color:#979797
 }

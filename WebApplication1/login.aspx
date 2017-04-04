@@ -28,19 +28,23 @@
                 <asp:Image ID="Image2" runat="server" class="posicaoImage2 posicaoAbsoluto" ImageUrl="~/Imagens/img.png" />
                 <asp:Label ID="Nome" class="posicaoCampos posicaoRelativo" runat="server" Text="Nome"></asp:Label>
                 <br />
-                <input class="posicaoText" id="Text1" runat="server" type="text" />
+                <input class="posicaoText" placeholder="Usuário" id="Text1" runat="server" type="text" />
                 <br />
                 <br />
                 <asp:Label class="posicaoCampos posicaoRelativo" ID="Label2" runat="server" Text="Senha"></asp:Label>
                 <br />
-                <input class="posicaoText" id="Text2" runat="server" type="password" />
+                <input class="posicaoText" placeholder="Senha" id="Text2" runat="server" type="password" />
                 <br />
                 <br />
-                <asp:CheckBox ID="CheckBox1" class="posicaoCampos posicaoRelativo" Text="Lembrar-me?" runat="server" />
+                <asp:CheckBox ID="CheckBox1" AutoPostBack="true" OnCheckedChanged="CheckBox1_CheckedChanged" class="posicaoCampos posicaoRelativo" Text="Lembrar-me?" runat="server" />
                 <br />
                 <asp:Button class="btn btn-secondary posicaoCampos posicaoRelativo" ID="Button1" runat="server" Text="Entrar" OnClick="Button1_Click" />
                 <asp:LinkButton class="posicaoLinkButton" ID="LinkButton1" runat="server">Retornar para o site da Moriah</asp:LinkButton>
             </fieldset>
+            <div id="DivStatusServer" runat="server" class="modeloDivStatusServer">
+                <asp:Image ID="statusServer" runat="server" ImageUrl="~/Imagens/offline.png" class="modeloStatusServer" />
+                <asp:Label ID="LabelStatusServer" runat="server" Text="O Servidor está offline" class="posicaoRelativo modeloLabelStatusServer"></asp:Label>
+            </div>
         </div>
         <div id="rodape" runat="server" class="rodape">
             <asp:Label ID="Label5" class="labelRodape" runat="server" Text="Moriah Consultoria"></asp:Label>

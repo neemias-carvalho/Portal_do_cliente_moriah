@@ -12,7 +12,15 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Classes.PingHost.PingHostMethod("http://moriahconsultoria.ddns.net:83/WSPOR02.apw?WSDL") == true)
+            {
+                statusServer.ImageUrl = "/Imagens/online.png";
+                LabelStatusServer.Text = "O Servidor está online";
+            } else
+            {
+                statusServer.ImageUrl = "/Imagens/offline.png";
+                LabelStatusServer.Text = "O Servidor está offline";
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -34,6 +42,17 @@ namespace WebApplication1
                     "Dados incorretos!</div>" +
                     "<script type=\"text/javascript\">window.onload=function(){alertBootstrap();};</script>");
             }
+            if (!CheckBox1.Checked)
+            {
+                Text1.Attributes.Add("autocomplete", "off");
+                Text2.Attributes.Add("autocomplete", "off");
+            }
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Text1.Attributes.Add("autocomplete", "on");
+            Text2.Attributes.Add("autocomplete", "on");
         }
     }
 }

@@ -196,9 +196,13 @@
     <Content Include="Imagens\imgprofile.png" />
     <Content Include="Imagens\newlogo.png" />
     <Content Include="Imagens\newlogo2.png" />
+    <Content Include="Imagens\offline.png" />
+    <Content Include="Imagens\online.png" />
     <Content Include="Imagens\planoDeFundo.jpg" />
     <Content Include="Imagens\x.png" />
     <Content Include="login.aspx" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
+    <Content Include="Scripts\jquery.maskedinput.min.js" />
     <Content Include="Style\Reset.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
